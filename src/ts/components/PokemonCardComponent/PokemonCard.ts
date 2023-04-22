@@ -6,6 +6,7 @@ class PokemonCardComponent extends Component implements ComponentStructure {
 
   constructor(parentElement: HTMLElement, public pokemonUrl: string) {
     super(parentElement, "li", "pokemon-card");
+    (async () => this.getPokemon())();
   }
 
   async getPokemon(): Promise<void> {
