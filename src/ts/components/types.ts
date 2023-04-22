@@ -23,9 +23,10 @@ export interface PokemonStructure {
 }
 
 export interface PokemonUrlListStructure {
-  results: [
-    {
-      name: string;
-    }
-  ];
+  name: string;
+  url: string;
+}
+
+export interface PokemonDataStructure {
+  results: PokemonUrlListStructure[];
 }
