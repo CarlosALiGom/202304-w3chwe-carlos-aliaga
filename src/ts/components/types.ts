@@ -21,3 +21,12 @@ export interface PokemonStructure {
     };
   };
 }
+
+export interface PokemonUrlListStructure {
+  name: string;
+  url: string;
+}
+
+export interface PokemonDataStructure {
+  results: PokemonUrlListStructure[];
+}
