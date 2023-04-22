@@ -2,21 +2,26 @@ import Component from "../Component/Component.js";
 import { type ComponentStructure, type PokemonStructure } from "../types";
 
 class PokemonCardComponent extends Component implements ComponentStructure {
-  constructor(
-    parentElement: HTMLElement,
-    private readonly pokemon: PokemonStructure
-  ) {
-    super(parentElement, "li", "pokemonCard");
+  private pokemonData: PokemonStructure;
 
+  constructor(parentElement: HTMLElement, public pokemonUrl: string) {
+    super(parentElement, "li", "pokemon-card");
+  }
+
+  async getPokemon(): Promise<void> {
+    const response = await fetch(this.pokemonUrl);
+    const pokemonData = (await response.json()) as PokemonStructure;
+
+    this.pokemonData = pokemonData;
     this.renderHtml();
   }
 
   renderHtml(): void {
     this.element.innerHTML = `
     <div class="pokemon pokemon-container">
-    <img class="pokemon__avatar" src="${this.pokemon.sprites.other["official-artwork"].front_default}" alt="${this.pokemon.name}" />
-    <h3 class="pokemon__name">${this.pokemon.name}</h3>
-    <span class="pokemon__Id">#</span> ${this.pokemon.id}
+    <img class="pokemon__avatar" src="${this.pokemonData.sprites.other["official-artwork"].front_default}" alt="${this.pokemonData.name}" />
+    <h3 class="pokemon__name">${this.pokemonData.name}</h3>
+    <span class="pokemon__Id">#</span> ${this.pokemonData.id}
     <ul class="pokemon__data-list">
     `;
   }
