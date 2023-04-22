@@ -14,7 +14,6 @@ module.exports = {
           "error",
           "interface",
         ],
-        "no-unused-vars": "error",
       },
     },
   ],
@@ -22,5 +21,8 @@ module.exports = {
     ecmaVersion: "latest",
     sourceType: "module",
   },
-  rules: {},
+  rules: {
+    "no-console": "error",
+    "no-new": "off",
+  },
 };
