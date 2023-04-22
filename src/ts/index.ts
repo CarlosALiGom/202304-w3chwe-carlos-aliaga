@@ -7,4 +7,4 @@ const getPokemons = async (): Promise<PokemonStructure> => {
   return (await response.json()) as PokemonStructure;
 };
 
-const result = await getPokemons();
+await getPokemons();
