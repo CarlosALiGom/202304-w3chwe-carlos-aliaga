@@ -1,23 +1,23 @@
 export interface ComponentStructure {
   element: HTMLElement;
-  renderHtml: () => void;
-  addListeners?: () => void;
-}
-
-export interface PokemonTypeNameStructure {
-  name: string;
-}
-
-export interface PokemonTypeStructure {
-  slot: number;
-  type: PokemonTypeNameStructure;
 }
 
 export interface PokemonStructure {
   name: string;
   id: number;
-  types: PokemonTypeStructure[];
+  types: {
+    slot: number;
+    type: {
+      name: string;
+    };
+  };
   height: number;
   weight: number;
-  Sprites: PokemonTypeStructure[];
+  sprites: {
+    other: {
+      "official-artwork": {
+        front_default: string;
+      };
+    };
+  };
 }
