@@ -1,7 +1,5 @@
 import Component from "../Component/Component.js";
 class AppComponent extends Component {
-  element: HTMLElement;
-
   constructor(parentElement: HTMLElement) {
     super(parentElement, "div", "app");
 
@@ -14,3 +12,5 @@ class AppComponent extends Component {
     </header>`;
   }
 }
+
+export default AppComponent;
