@@ -8,7 +8,7 @@ class PaginationComponent extends Component {
   }
 
   renderHtml(): void {
-    this.element.innerHTML = `<p class="pagination-number">20/1000</p>`;
+    this.element.innerHTML = `<p class="pagination-number">20/1010</p>`;
   }
 }
 
