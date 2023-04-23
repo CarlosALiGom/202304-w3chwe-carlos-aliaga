@@ -1,3 +1,4 @@
+import { off } from "process";
 import Component from "../Component/Component.js";
 import PokemonCardComponent from "../PokemonCardComponent/PokemonCard.js";
 import {
@@ -38,6 +39,7 @@ class PokemonListComponent extends Component {
   registerEventListener() {
     const nextButton = document.querySelector(".button-next");
     const previousButton = document.querySelector(".button-previous");
+    const paginationNumber = document.querySelector(".pagination-number")!;
 
     previousButton?.addEventListener("click", async () => {
       if (!this.offsetNumber) {
@@ -45,12 +47,14 @@ class PokemonListComponent extends Component {
       }
 
       this.offsetNumber -= 20;
+      paginationNumber.textContent = `${this.offsetNumber + 20}/1000`;
 
       await this.getPokemons();
     });
 
     nextButton?.addEventListener("click", async () => {
       this.offsetNumber += 20;
+      paginationNumber.textContent = `${this.offsetNumber + 20}/1000`;
 
       await this.getPokemons();
     });

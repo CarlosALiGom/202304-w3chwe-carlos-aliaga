@@ -4,10 +4,6 @@
   box-sizing: border-box;
 }
 
-html {
-  font-family: "VT323", monospace;
-}
-
 body,
 h1,
 h2,
@@ -71,5 +67,20 @@ ul {
 
 button {
   border-color: rgb(42, 116, 186);
-  padding: 0.2rem;
+  font-size: 1rem;
+  padding: 0.25rem;
+}
+
+.button-previous {
+  margin-left: 2rem;
+  margin-bottom: 2rem;
+}
+
+.button-next {
+  margin-left: 0.15rem;
+}
+
+.pagination-number {
+  margin-left: 2rem;
+  font-size: 1.2rem;
 }
