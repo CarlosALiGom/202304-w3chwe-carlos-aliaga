@@ -6,7 +6,6 @@
 
 html {
   font-family: "VT323", monospace;
-  background-color: #ffcb05;
 }
 
 body,
@@ -40,7 +39,6 @@ a {
 
 .root {
   font-family: "VT323", monospace;
-  background-color: #ffcb05;
 }
 
 .main-header {
@@ -48,11 +46,19 @@ a {
   justify-content: center;
   padding: 3rem;
   align-items: center;
+  width: 100vw;
+}
+
+ul {
+  padding: 2rem;
 }
 
 .card {
-  background-color: transparent;
   border: none;
+  background: whitesmoke;
+  border: 0.1rem solid rgb(42, 116, 186);
+  box-shadow: 20px 10px 15px -3px rgba(0, 0, 0, 0.1),
+    15px 10px 15px -3px rgba(54, 98, 172, 1);
 }
 
 .card-title {
