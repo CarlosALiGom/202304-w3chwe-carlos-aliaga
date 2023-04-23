@@ -47,14 +47,14 @@ class PokemonListComponent extends Component {
       }
 
       this.offsetNumber -= 20;
-      paginationNumber.textContent = `${this.offsetNumber + 20}/1000`;
+      paginationNumber.textContent = `${this.offsetNumber + 20}/1010`;
 
       await this.getPokemons();
     });
 
     nextButton?.addEventListener("click", async () => {
       this.offsetNumber += 20;
-      paginationNumber.textContent = `${this.offsetNumber + 20}/1000`;
+      paginationNumber.textContent = `${this.offsetNumber + 20}/1010`;
 
       await this.getPokemons();
     });
