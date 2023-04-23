@@ -10,7 +10,7 @@ class PokemonListComponent extends Component {
   apiUrl = "https://pokeapi.co/api/v2/pokemon/";
 
   constructor(parentElement: HTMLElement) {
-    super(parentElement, "ul", "pokemon-list");
+    super(parentElement, "ul", "row row-cols-2 row-cols-md-4 g-4");
     (async () => this.getPokemons())();
   }
 

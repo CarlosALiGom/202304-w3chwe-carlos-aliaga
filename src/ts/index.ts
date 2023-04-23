@@ -7,4 +7,6 @@ const apiUrl = "https://pokeapi.co/api/v2/pokemon/";
 const divContainer: HTMLElement = document.querySelector(".root")!;
 
 new AppComponent(divContainer);
-new PokemonListComponent(divContainer);
+
+const appContainer: HTMLElement = document.querySelector(".app-container")!;
+new PokemonListComponent(appContainer);
