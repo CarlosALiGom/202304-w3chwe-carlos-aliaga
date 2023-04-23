@@ -8,6 +8,7 @@ class ButtonComponent extends Component implements ButtonComponentStructure {
     super(parentElement, "button", className);
 
     this.text = text;
+    this.renderHtml();
   }
 
   renderHtml(): void {
