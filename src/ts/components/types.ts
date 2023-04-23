@@ -1,7 +1,9 @@
 export interface ComponentStructure {
   element: HTMLElement;
 }
-
+export interface ButtonComponentStructure extends ComponentStructure {
+  text: string;
+}
 export interface PokemonStructure {
   name: string;
   id: number;
