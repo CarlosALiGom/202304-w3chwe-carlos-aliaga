@@ -7,15 +7,22 @@ import {
 
 class PokemonListComponent extends Component {
   pokemonUrls: PokemonUrlListStructure[];
-  apiUrl = "https://pokeapi.co/api/v2/pokemon/";
+  offsetNumber = 0;
 
   constructor(parentElement: HTMLElement) {
     super(parentElement, "ul", "row row-cols-2 row-cols-md-4 g-4");
+
     (async () => this.getPokemons())();
+    setTimeout(() => {
+      this.registerEventListener();
+    }, 1000);
   }
 
   async getPokemons(): Promise<void> {
-    const response = await fetch(this.apiUrl);
+    this.element.innerHTML = "";
+    const response = await fetch(
+      `https://pokeapi.co/api/v2/pokemon?offset=${this.offsetNumber}&limit=20`
+    );
     const pokemonList = (await response.json()) as PokemonDataStructure;
 
     this.pokemonUrls = pokemonList.results;
@@ -25,6 +32,27 @@ class PokemonListComponent extends Component {
   renderHtml(): void {
     this.pokemonUrls.forEach((pokemon) => {
       new PokemonCardComponent(this.element, pokemon.url);
+    });
+  }
+
+  registerEventListener() {
+    const nextButton = document.querySelector(".button-next");
+    const previousButton = document.querySelector(".button-previous");
+
+    previousButton?.addEventListener("click", async () => {
+      if (!this.offsetNumber) {
+        return;
+      }
+
+      this.offsetNumber -= 20;
+
+      await this.getPokemons();
+    });
+
+    nextButton?.addEventListener("click", async () => {
+      this.offsetNumber += 20;
+
+      await this.getPokemons();
     });
   }
 }

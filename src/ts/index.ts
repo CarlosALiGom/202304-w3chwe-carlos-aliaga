@@ -9,5 +9,5 @@ new AppComponent(divContainer);
 const appContainer: HTMLElement = document.querySelector(".app-container")!;
 new PokemonListComponent(appContainer);
 
-new ButtonComponent(divContainer, "previous-button", "Previous");
+new ButtonComponent(divContainer, "button-previous", "Previous");
 new ButtonComponent(divContainer, "button-next", "Next");
