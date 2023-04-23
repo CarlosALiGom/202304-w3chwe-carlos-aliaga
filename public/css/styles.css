@@ -46,7 +46,7 @@ a {
 .main-header {
   display: flex;
   justify-content: center;
-  padding: 50px;
+  padding: 3rem;
   align-items: center;
 }
 
