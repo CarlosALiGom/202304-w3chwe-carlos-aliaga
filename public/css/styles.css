@@ -37,3 +37,28 @@ a {
   text-decoration: none;
   color: inherit;
 }
+
+.root {
+  font-family: "VT323", monospace;
+  background-color: #ffcb05;
+}
+
+.main-header {
+  display: flex;
+  justify-content: center;
+  padding: 50px;
+  align-items: center;
+}
+
+.card {
+  background-color: transparent;
+  border: none;
+}
+
+.card-title {
+  font-size: 1.5rem;
+}
+
+.card-text {
+  font-size: 1.3rem;
+}

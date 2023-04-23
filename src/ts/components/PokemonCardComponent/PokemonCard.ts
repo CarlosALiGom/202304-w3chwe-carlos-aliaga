@@ -5,7 +5,7 @@ class PokemonCardComponent extends Component implements ComponentStructure {
   private pokemonData: PokemonStructure;
 
   constructor(parentElement: HTMLElement, public pokemonUrl: string) {
-    super(parentElement, "li", "pokemon-card");
+    super(parentElement, "li", "col");
     (async () => this.getPokemon())();
   }
 
@@ -19,11 +19,13 @@ class PokemonCardComponent extends Component implements ComponentStructure {
 
   renderHtml(): void {
     this.element.innerHTML = `
-    <div class="pokemon pokemon-container">
-    <img class="pokemon__avatar" src="${this.pokemonData.sprites.other["official-artwork"].front_default}" alt="${this.pokemonData.name}" />
-    <h3 class="pokemon__name">${this.pokemonData.name}</h3>
-    <span class="pokemon__Id">#</span> ${this.pokemonData.id}
-    <ul class="pokemon__data-list">
+    <div class="card h-100">
+      <img src="${this.pokemonData.sprites.other["official-artwork"].front_default}" class="card-img-top"  alt="${this.pokemonData.name}" />
+      <div class="card-body">
+        <h5 class="card-title">${this.pokemonData.name}</h5>
+        <p class="card-text">#  ${this.pokemonData.id}</p>
+      </div>
+    </div>
     `;
   }
 }
