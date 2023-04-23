@@ -1,4 +1,4 @@
-import Component from "../Component/Component";
+import Component from "../Component/Component.js";
 import { type ButtonComponentStructure } from "../types";
 
 class ButtonComponent extends Component implements ButtonComponentStructure {

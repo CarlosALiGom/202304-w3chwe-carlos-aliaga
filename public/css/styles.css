@@ -68,3 +68,8 @@ ul {
 .card-text {
   font-size: 1.3rem;
 }
+
+button {
+  border-color: rgb(42, 116, 186);
+  padding: 0.2rem;
+}
